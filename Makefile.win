@@ -1,0 +1,55 @@
+# Project: 数据结构
+# Makefile created by Dev-C++ 5.6.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o acllib.o graphics.o LinkList.o SequList.o window.o BinTree.o Tree.o Map.o temp.o
+LINKOBJ  = main.o acllib.o graphics.o LinkList.o SequList.o window.o BinTree.o Tree.o Map.o temp.o
+LIBS     = -L"D:/wApplicants/Dev-Cpp/MinGW32/lib" -L"D:/wApplicants/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -mwindows D:/wApplicants/Dev-Cpp/MinGW32/lib/libwinmm.a D:/wApplicants/Dev-Cpp/MinGW32/lib/libmsimg32.a D:/wApplicants/Dev-Cpp/MinGW32/lib/libkernel32.a D:/wApplicants/Dev-Cpp/MinGW32/lib/libuser32.a D:/wApplicants/Dev-Cpp/MinGW32/lib/libgdi32.a D:/wApplicants/Dev-Cpp/MinGW32/lib/libole32.a D:/wApplicants/Dev-Cpp/MinGW32/lib/liboleaut32.a D:/wApplicants/Dev-Cpp/MinGW32/lib/libuuid.a -g3
+INCS     = -I"D:/wApplicants/Dev-Cpp/MinGW32/include" -I"D:/wApplicants/Dev-Cpp/MinGW32/mingw32/include" -I"D:/wApplicants/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"D:/wApplicants/Dev-Cpp/MinGW32/include" -I"D:/wApplicants/Dev-Cpp/MinGW32/mingw32/include" -I"D:/wApplicants/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"D:/wApplicants/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = 数据结构.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+acllib.o: acllib.c
+	$(CC) -c acllib.c -o acllib.o $(CFLAGS)
+
+graphics.o: graphics.c
+	$(CC) -c graphics.c -o graphics.o $(CFLAGS)
+
+LinkList.o: LinkList.c
+	$(CC) -c LinkList.c -o LinkList.o $(CFLAGS)
+
+SequList.o: SequList.c
+	$(CC) -c SequList.c -o SequList.o $(CFLAGS)
+
+window.o: window.c
+	$(CC) -c window.c -o window.o $(CFLAGS)
+
+BinTree.o: BinTree.c
+	$(CC) -c BinTree.c -o BinTree.o $(CFLAGS)
+
+Tree.o: Tree.c
+	$(CC) -c Tree.c -o Tree.o $(CFLAGS)
+
+Map.o: Map.c
+	$(CC) -c Map.c -o Map.o $(CFLAGS)
+
+temp.o: temp.c
+	$(CC) -c temp.c -o temp.o $(CFLAGS)
